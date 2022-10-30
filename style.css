@@ -1,20 +1,26 @@
 :root {
-    --mellow-apricot: #fcb97dff;
-    --buff: #edd892ff;
-    --khaki-web: #c6b89eff;
-    --ash-gray: #b5b8a3ff;
-    --laurel-green: #aaba9eff;
+  --battleship-grey: #808d8eff;
+  --old-lavender: #766c7fff;
+  --purple-mountain-majesty: #947eb0ff;
+  --wild-blue-yonder: #a3a5c3ff;
+  --powder-blue: #a9d2d5ff;
+
+  --light-slate-gray: #818d92ff;
+  --deep-space-sparkle: #586a6aff;
+  --grullo: #b9a394ff;
+  --pale-silver: #d4c5c7ff;
+  --languid-lavender: #dad4efff;
 }
 
 body {
-    background-color: rgb(68, 62, 73);
+    background-color: var(--grullo);
     margin: 0;
 }
 
 svg {
     width: 80px;
     height: 80px;
-    position: absolute;
+    position: fixed;
     top: 10px;
 }
 .plates {
@@ -52,56 +58,56 @@ svg {
     transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
 }
 .plate2 .line1 {
-    stroke-dasharray: 21 185.62753295898438;
-    transition-delay: 0;
-  }
-  .plate2 .line2 {
-    stroke-dasharray: 21 178.6514129638672;
-    transition-delay: 30ms;
-  }
-  .plate2 .line3 {
-    stroke-dasharray: 21 197.92425537109375;
-    transition-delay: 60ms;
-  }
-  .plate2 .line4 {
-    stroke-dasharray: 21 190.6597137451172;
-    transition-delay: 90ms;
-  }
-  .plate2 .line5 {
-    stroke-dasharray: 21 208.52874755859375;
-    transition-delay: 120ms;
-  }
-  .plate2 .line6 {
-    stroke-dasharray: 21 186.59703063964844;
-    transition-delay: 150ms;
-  }
-  .active.plate2 .line1 {
-    stroke-dasharray: 5 185.62753295898438;
-    stroke-dashoffset: -141px;
-  }
-  .active.plate2 .line2 {
-    stroke-dasharray: 5 178.6514129638672;
-    stroke-dashoffset: -137px;
-  }
-  .active.plate2 .line3 {
-    stroke-dasharray: 5 197.92425537109375;
-    stroke-dashoffset: -176px;
-  }
-  .active.plate2 .line4 {
-    stroke-dasharray: 5 190.6597137451172;
-    stroke-dashoffset: -159px;
-  }
-  .active.plate2 .line5 {
-    stroke-dasharray: 5 208.52874755859375;
-    stroke-dashoffset: -139px;
-  }
-  .active.plate2 .line6 {
-    stroke-dasharray: 5 186.59703063964844;
-    stroke-dashoffset: -176px;
-  }
-  .active.plate2 .x {
-    transition: transform 400ms 250ms;
-  }
+  stroke-dasharray: 21 185.62753295898438;
+  transition-delay: 0;
+}
+.plate2 .line2 {
+  stroke-dasharray: 21 178.6514129638672;
+  transition-delay: 30ms;
+}
+.plate2 .line3 {
+  stroke-dasharray: 21 197.92425537109375;
+  transition-delay: 60ms;
+}
+.plate2 .line4 {
+  stroke-dasharray: 21 190.6597137451172;
+  transition-delay: 90ms;
+}
+.plate2 .line5 {
+  stroke-dasharray: 21 208.52874755859375;
+  transition-delay: 120ms;
+}
+.plate2 .line6 {
+  stroke-dasharray: 21 186.59703063964844;
+  transition-delay: 150ms;
+}
+.active.plate2 .line1 {
+  stroke-dasharray: 5 185.62753295898438;
+  stroke-dashoffset: -141px;
+}
+.active.plate2 .line2 {
+  stroke-dasharray: 5 178.6514129638672;
+  stroke-dashoffset: -137px;
+}
+.active.plate2 .line3 {
+  stroke-dasharray: 5 197.92425537109375;
+  stroke-dashoffset: -176px;
+}
+.active.plate2 .line4 {
+  stroke-dasharray: 5 190.6597137451172;
+  stroke-dashoffset: -159px;
+}
+.active.plate2 .line5 {
+  stroke-dasharray: 5 208.52874755859375;
+  stroke-dashoffset: -139px;
+}
+.active.plate2 .line6 {
+  stroke-dasharray: 5 186.59703063964844;
+  stroke-dashoffset: -176px;
+}
+.active.plate2 .x {
+  transition: transform 400ms 250ms;
+}
 .active .x {
     transform: scale(1);
     transition: transform 400ms 350ms;
@@ -114,20 +120,49 @@ svg {
     z-index: 1;
     left: 0;
     background-color: white;
-    padding-top: 60px;
+    padding-top: 100px;
     overflow-x: hidden;
     transition: 0.5s;
 }
-#sideNavSlider a {
-    padding: 8px 8px 8px 32px;
+#sideNavSlider p, #sideNavSlider a {
+    padding: 16px 8px 8px 20px;
+    width: 100% - 20px;
     text-decoration: none;
     font-size: 20px;
     color: #818181;
     display: block;
-    transition: 0.3s;
+    background: linear-gradient(#b3ad5d 0 0) var(--p,0)/var(--p,0) no-repeat;
+    transition: .2s, background-position 0s;
+    cursor: pointer;
+    margin: 0;
 }
-#sideNavSlider a:hover {
+#sideNavSlider a:hover, #sideNavSlider p:hover {
     color: #f1f1f1;
+    --p: 100%;
+}
+.unitDropdown {
+  margin: 0;
+  height: 0px;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.3s;
+  text-decoration: none;
+  list-style: none;
+  font-size: 15px;
+  color: #818181;
+  transition: 0.5s;
+}
+.unitDropdown li hr {
+    width: 60%;
+    margin: 10px 0 0 47px;
+}
+#sideNavSlider .unitSelected {
+  background-color: gray;
+  color: white;
+}
+.unitsOpen {
+  height: 280px;
 }
 
 #pageContainer {
@@ -138,7 +173,7 @@ svg {
     justify-content: space-between;
 }
 h1 {
-    color: blue;
+    color: var(--deep-space-sparkle);
     text-align: center;
 }
 main {
@@ -146,7 +181,36 @@ main {
 }
 
 footer {
-    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
     width: 100%;
-    background-color:black;
+    background-color: var(--pale-silver);
+}
+.copyrightInfo {
+  width: 50%;
+}
+.copyrightInfo p {
+  color: var(--old-lavender);
+}
+form {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.questions {
+  margin: auto;
+}
+.inputs {
+  margin: auto;
+}
+#description {
+  display: inline-block;
+  margin: auto;
+  resize: none;
+  height: 100px;
+  width: 300px;
+}
+#submit {
+  display: flex;
 }

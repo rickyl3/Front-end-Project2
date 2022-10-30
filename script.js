@@ -5,3 +5,8 @@ function openCloseNav() {
         document.getElementById("sideNavSlider").style.width = "0px";
     }
 }
+
+function openCloseUnits(unit) {
+    console.log(unit);
+    document.getElementById(unit).classList.toggle("unitsOpen");
+}

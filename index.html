@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>yo</h1>
+        <h1>Insert Home Page Title</h1>
         <nav id="sideNav">
             <svg>
                 <defs>
@@ -39,10 +39,19 @@
             
 
             <div id="sideNavSlider">
-                <a href="/Front-end-Project2/unit1.html">Unit 1 - Primitive Types</a>
-                <a href="/Front-end-Project2/unit2.html">Unit 2 - Using Objects</a>
-                <a href="/Front-end-Project2/unit3.html">Unit 3 - Boolean Expressions and if Statements</a>
-                <a href="/Front-end-Project2/unit4.html">Unit 4 - Iteration</a>
+                <a href="/Front-end-Project2/index.html">Home</a>
+                <p onclick="this.classList.toggle('unitSelected');openCloseUnits('unit1Lessons');">Unit 1 - Primitive Types</p>
+                <ul class="unitDropdown" id="unit1Lessons">
+                    <li><a href="/Front-end-Project2/unit1.html">1.1 - Primitive Types</a></li>
+                    <li><a href="/Front-end-Project2/unit1.html">1.2 - Variables and Primitive Data Types</a></li>
+                    <li><a href="/Front-end-Project2/unit1.html">1.3 - Expressions and Assignment Statements</a></li>
+                    <li><a href="/Front-end-Project2/unit1.html">1.4 - Compound Assignment Operators</a></li>
+                    <li><a href="/Front-end-Project2/unit1.html">1.5 - Casting and Ranges of Variables</a></li>
+                    <li><hr></li>
+                </ul>
+                <p>Unit 2 - Using Objects</p>
+                <p>Unit 3 - Boolean Expressions and if Statements</p>
+                <p>Unit 4 - Iteration</p>
             </div>
         </nav>
     </header>
@@ -72,8 +81,18 @@
     
         <footer>
             <form>
-                <input type="text">
+                <div class="questions">
+                    <h4>Experiencing any problems or have a suggestion?</h4>
+                    <p>Send us a response!</p>
+                </div>
+                <div class="inputs">
+                    <textarea type="text" id="description"></textarea>
+                    <input type="submit" id="submit" value="Submit">
+                </div>
             </form>
+            <div class="copyrightInfo">
+                <p>&copy Ricky Leung</p>
+            </div>
         </footer>
     </div>
 
