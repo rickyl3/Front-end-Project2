@@ -139,6 +139,7 @@ svg {
 #sideNavSlider a:hover, #sideNavSlider p:hover {
     color: #f1f1f1;
     --p: 100%;
+    box-shadow: -10px 8px 5px 0px var(--pale-silver);
 }
 .unitDropdown {
   margin: 0;
@@ -209,7 +210,7 @@ form {
   margin: auto;
   resize: none;
   height: 100px;
-  width: 300px;
+  width: 200%;
 }
 #submit {
   display: flex;
