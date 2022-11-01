@@ -125,7 +125,7 @@ svg {
     transition: 0.5s;
 }
 #sideNavSlider p, #sideNavSlider a {
-    padding: 16px 8px 8px 20px;
+    padding: 16px 8px 8px 27px;
     width: 100% - 20px;
     text-decoration: none;
     font-size: 20px;
@@ -140,6 +140,7 @@ svg {
     color: #f1f1f1;
     --p: 100%;
     box-shadow: -10px 8px 5px 0px var(--pale-silver);
+    transform: scale(1.08, 1.03);
 }
 .unitDropdown {
   margin: 0;
