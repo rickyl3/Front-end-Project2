@@ -140,7 +140,7 @@ svg {
     color: #f1f1f1;
     --p: 100%;
     box-shadow: -10px 8px 5px 0px var(--pale-silver);
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 .unitDropdown {
   margin: 0;
