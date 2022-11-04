@@ -113,14 +113,16 @@ svg {
     transition: transform 400ms 350ms;
 }
 #sideNavSlider {
-    height: 100%;
+    min-height: 100vh;
     width: 0px;
     position: fixed;
     top: 0;
+    bottom: 0px;
+    min-height: 0;
     z-index: 1;
     left: 0;
     background-color: white;
-    padding-top: 100px;
+    padding: 70px 0 20px 0;
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -128,7 +130,7 @@ svg {
     padding: 16px 8px 8px 20px;
     width: 100% - 20px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #818181;
     display: block;
     background: linear-gradient(#b3ad5d 0 0) var(--p,0)/var(--p,0) no-repeat;
@@ -148,6 +150,7 @@ svg {
   top: 0;
   z-index: 1;
   overflow: hidden;
+  overflow-y: scroll;
   transition: 0.3s;
   text-decoration: none;
   list-style: none;
