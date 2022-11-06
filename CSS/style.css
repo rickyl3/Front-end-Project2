@@ -1,0 +1,33 @@
+:root {
+  --battleship-grey: #808d8eff;
+  --old-lavender: #766c7fff;
+  --purple-mountain-majesty: #947eb0ff;
+  --wild-blue-yonder: #a3a5c3ff;
+  --powder-blue: #a9d2d5ff;
+
+  --light-slate-gray: #818d92ff;
+  --deep-space-sparkle: #586a6aff;
+  --grullo: #b9a394ff;
+  --pale-silver: #d4c5c7ff;
+  --languid-lavender: #dad4efff;
+}
+
+html, body {
+  height: 100%;
+}
+#pageContainer {
+    width: 100%;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    margin-bottom: -80px;
+}
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+h1 {
+    color: var(--deep-space-sparkle);
+    text-align: center;
+    margin-top: 100px;
+}

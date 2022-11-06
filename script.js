@@ -1,3 +1,7 @@
+function activeSideNav() {
+    document.getElementById("mainPlate").classList.toggle("active");
+}
+
 function openCloseNav() {
     if (document.getElementById("mainPlate").classList.contains("active")) {
         document.getElementById("sideNavSlider").style.width = "400px";

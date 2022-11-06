@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <title>Homepage</title>
     
 </head>
 <body>
     <header>
-        <h1>Insert Home Page Title</h1>
         <nav id="sideNav">
             <svg>
                 <defs>
@@ -23,7 +23,7 @@
                 </defs>
             </svg>
             <div class="plates">
-                <div id="mainPlate" class="plate plate2" onclick="this.classList.toggle('active');openCloseNav()">
+                <div id="mainPlate" class="plate plate2" onclick="activeSideNav();openCloseNav();">
                     <svg class="menu" version="1.1" height="100" width="100" viewBox="0 0 100 100">
                         <path class="line line1" d="M 50,65 H 70 C 70,65 75,65.198488 75,70.762712 C 75,73.779026 74.368822,78.389831 66.525424,78.389831 C 22.092231,78.389831 -18.644068,-30.508475 -18.644068,-30.508475" />
                         <path class="line line2" d="M 50,35 H 70 C 70,35 81.355932,35.300135 81.355932,25.635593 C 81.355932,20.906215 78.841706,14.830508 72.881356,14.830508 C 35.648232,14.830508 -30.508475,84.322034 -30.508475,84.322034" />
@@ -95,72 +95,50 @@
 
     <div id="pageContainer">
         <main>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfasfsdfdsdfsfdsfdsfdssfdfddsfdsffsdsdfsdfdsfdfsdsfdsfsdffdsdsfdsfdsfdsfdsfdfssdfdsfdsfdsf</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
-            <p>dhjakshjakjdfas</p>
+          <h1 class="cover-heading">APCSA Review</h1>
+          <p class="lead" onclick="openCloseNav();">
+            Review and test yourself on the contents of the APCSA course. Continue by 
+            clicking learn more or the menu icon on the top left!
+          </p>
+          <p class="lead">
+            <a href="#" class="btn btn-lg btn-secondary" onclick="activeSideNav();openCloseNav();">Learn more</a>
+          </p>
             
         </main>
-
-        <footer class="bg-dark text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-              <!-- Section: Form -->
-              <section class="">
-                <form action="">
-                  <!--Grid row-->
-                  <div class="row d-flex justify-content-center">
-                    <!--Grid column-->
-                    <div class="col-auto">
-                      <p class="pt-2">
-                        <strong>Send anonymous advice!</strong>
-                      </p>
-                    </div>
-                    <!--Grid column-->
-          
-                    <!--Grid column-->
-                    <div class="col-md-5 col-12">
-                      <!-- Email input -->
-                      <div class="form-outline form-white mb-4">
-                        <textarea id="adviceTextarea" class="form-control"></textarea>
-                      </div>
-                    </div>
-                    <!--Grid column-->
-          
-                    <!--Grid column-->
-                    <div class="col-auto">
-                      <!-- Submit button -->
-                      <button type="submit" class="btn btn-outline-light mb-4">
-                        Send
-                      </button>
-                    </div>
-                    <!--Grid column-->
-                  </div>
-                  <!--Grid row-->
-                </form>
-              </section>
-              <!-- Section: Form -->
-            </div>
-            <!-- Grid container -->
-          
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              &copy Ricky Leung
-              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-          </footer>
     </div>
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4 pb-0">
+        <section class="">
+          <form action="">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Send anonymous feedback!</strong>
+                </p>
+              </div>
+    
+              <div class="col-md-5 col-12">
+                <div class="form-outline form-white mb-4">
+                  <textarea id="adviceTextarea" class="form-control"></textarea>
+                </div>
+              </div>
+    
+              <div class="col-auto">
+                <button type="submit" class="btn btn-outline-light mb-4">
+                  Send
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        &copy Ricky Leung
+      </div>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>
