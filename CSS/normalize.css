@@ -181,3 +181,39 @@ svg {
 .unitsOpen {
     height: 250px;
 }
+
+#adviceTextarea {
+    resize: none;
+}
+
+footer {
+    z-index: 50;
+}
+html, body {
+    height: 100%;
+}
+main {
+    margin: 0 auto;
+}
+#pageContainer {
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    min-height: calc(100%);
+    flex-direction: column;
+}
+#compiler {
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    height: 40vh;
+    width: 40vw;
+    background-color: var(--grullo);
+}
+.unitSeparate {
+    border: none;
+    height: 1px;
+    width: 80%;
+    background-color: black;
+    margin-bottom: 50px;
+}
