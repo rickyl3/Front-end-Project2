@@ -24,7 +24,25 @@ h1 {
     margin-left: 30px;
     margin-right: 30px;
 }
-.unitContent img {
+.unitContent a img {
     width: 60%;
     margin-left: 175px;
+    margin-bottom: 16px;
+}
+#accessModifierTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+#accessModifierTable th{
+    background-color: var(--deep-space-sparkle);
+}
+#accessModifierTable td {
+    text-align: center;
+}
+#accessModifierTable .yes {
+    background-color: var(--light-slate-gray);
+}
+#accessModifierTable th, #accessModifierTable td {
+    padding: 10px;
+    border: solid 1px black;
 }

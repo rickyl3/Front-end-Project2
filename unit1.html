@@ -120,6 +120,34 @@
             <a href="https://statisticsanddata.org/data/the-most-popular-programming-languages-1965-2022-new-update/">
                 <img src="Images/popularLanguages.png" alt="Chart of most popular programming languages">
             </a>
+
+            <div class="codeText">
+                <p>
+                    public class Main { <br>
+                    &nbsp public static void main(String[] args) { <br>
+                    &nbsp &nbsp System.out.print("no ln"); <br>
+                    &nbsp &nbsp System.out.println("ln"); <br>
+                    &nbsp } <br>
+                    } <br>
+                </p>
+            </div>
+            <p>
+                Each java file always end in .java. Its name has to be the same as whatever you set the name to in the actual code so 
+                in this case, the file would be named Main.java. After declaring the name of the file, you would simply add {} in order to 
+                incapsulate the contents within the actual class. For everything within a new set of {}, you would add an indent. While it isn't exactly required for the program to run, it 
+                makes interpreting and fixing code a lot easier in the future. For now, we will just add <strong>public static void main(String[] args) {}</strong> 
+                in order to get the code working. We will cover what each part of that statement means later on. As of right now, we will let 
+                you run your first piece of code. By adding <strong>System.out.print("hello");</strong> or <strong>System.out.println("hello");</strong>, we wll be able to output 
+                a string that has the contents of "hello" into the terminal. However, there is definitive difference between <strong>System.out.print();</strong> and 
+                <strong>System.out.println();</strong>
+            </p>
+            <p class="lead">
+                System.out.print("hello") - prints hello into the terminal without starting a new line <br>
+                System.out.println("hello") - prints hello into the terminal and then moves the cursor to a new line
+            </p>
+            <p class="small lead">
+                Reminder: You can test these out using your own IDE or with the provided compiler at the end of the page.
+            </p>
         </div>
         <hr class="unitSeparate">
 
@@ -130,24 +158,222 @@
                 These kinds of information are categorized under different terms. The three basic primitive data types used throughout
                 the entirety of this course are known as Int, Double, and Boolean.
             </p>
+            <p class="lead">
+                <strong>Int</strong> - numbers represented as integers(-1, 5, 200, etc.) <br>
+                <strong>Double</strong> - numbers represented as decimals(-0.1, 3.5324, 3289.9, etc.) <br>
+                <strong>Boolean</strong> - true or false
+            </p>
+
+            <p>
+                In addition to primitive data types, <strong>variables</strong> are also very important. Variables are a way of storing data 
+                under a reference in order to make it easier to access. In order to declare a variable, you need to do the following: 
+            </p>
+            <p class="lead">
+                dataType variableName = variableValue;
+            </p>
+            <div class="codeText">
+                int daysInYear = 365;
+            </div>
+            <p>
+                When naming variables, it is good practice to write them in a format known as Camel Case. For this format, if your variable name is more than 1 word, 
+                you would simply uncapitalize the entirety of the first word and then capitalize the first letter of every word that comes after(as shown in the example). Additionally, make sure that there 
+                are no spaces separating each word and make sure to name your variables with meaningful names rather than just random letters like x, y, or z. 
+                By keeping a consistent pattern that many people follow, it makes understanding not only your own code, but other people's codes, a lot easier.
+            </p>
+            <div class="codeText">
+                int daysInYear = 365; <br>
+                private int daysinWeek = 7; <br>
+                protected int daysinLeapYear = 366; <br>
+                public int hoursInDay = 24;
+            </div>
+            <p>
+                When declaring variables, you can add something known as an access modifier to the start of the declaration. Since java is an object-oriented programming language, we need a good 
+                way to distinguish which variables should and shouldn't be able to be accessed between different classes. Look at the following table to see how each access modifier 
+                allows different sets of permissions.
+            </p>
+            <table id="accessModifierTable">
+                <tr>
+                    <th>Modifier</th>
+                    <th>Class</th>
+                    <th>Package</th>
+                    <th>Subclass</th>
+                    <th>Global</th>
+                </tr>
+                <tr>
+                    <th>Public</th>
+                    <td class="yes">Yes</td>
+                    <td class="yes">Yes</td>
+                    <td class="yes">Yes</td>
+                    <td class="yes">Yes</td>
+                </tr>
+                <tr>
+                    <th>Protected</th>
+                    <td class="yes">Yes</td>
+                    <td class="yes">Yes</td>
+                    <td class="yes">Yes</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td class="yes">Yes</td>
+                    <td class="yes">Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Private</th>
+                    <td class="yes">Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+            </table>
+            <div class="codeText">
+                import java.util.Scanner; <br>
+                <br>
+                public class Main { <br>
+                    &nbsp public static void main(String[] args) { <br>
+                    &nbsp &nbsp Scanner input = new Scanner(System.in); <br>
+                    &nbsp &nbsp System.out.println("Enter an int: "); <br>
+                    &nbsp &nbsp int inputNumber = input.nextInt(); <br>
+                    &nbsp &nbsp System.out.print("Int that was entered was"); <br>
+                    &nbsp &nbsp System.out.println(inputNumber); <br>
+                    &nbsp &nbsp input.nextLine(); <br>
+                    &nbsp &nbsp System.out.println("Enter a String: "); <br>
+                    &nbsp &nbsp String inputString = input.nextLine(); <br>
+                    &nbsp &nbsp System.out.print("String that was entered was"); <br>
+                    &nbsp &nbsp System.out.println(inputString); <br>
+                    &nbsp } <br>
+                    } <br>
+            </div>
+            <p>
+                In java, a simple way to receive an input from the user is with the Scanner class. In order to use the Scanner class, we first need to import <strong>java.util.Scanner</strong>. When 
+                importing, you should put them at the very top of the java file so it is more organized. After importing, create a scanner object by using the Scanner <span class="font-italic">variableName</span> 
+                = new Scanner(System.in); Then, you can any of the following in order to ask for a certain input:
+            </p>
+            <p class="lead">
+                public int <span class="font-italic">variableName</span> = <span class="font-italic">scannerName</span>.nextInt() - requests an int from the user <br>
+                public double <span class="font-italic">variableName</span> = <span class="font-italic">scannerName</span>.nextDouble() - requests a double from the user <br>
+                public boolean <span class="font-italic">variableName</span> = <span class="font-italic">scannerName</span>.nextBoolean() - requests a boolean from the user <br>
+                public String <span class="font-italic">variableName</span> = <span class="font-italic">scannerName</span>.nextLine() - requests a string from the user
+            </p>
+            <p>
+                Once any one of these commands run, the user will need to input an answer relative to the primitive type that is requested and then press enter in the terminal. After that, the variable name that 
+                the user set the input to will then contain the value that was inputted. You can copy and paste the example just above this section into the compiler at the end of the page, edit it if needed, and 
+                test it out. In order to put in an input at the compiler at the bottom, press the gear icon at the bottom right and select custom Custom Input. Then, put in both of your inputs(or however many inputs 
+                you asked the code for). If you are running your code on an IDE, you can simply just type into the terminal and press enter.
+            </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>1.3 - Expressions and Assignment Statements</h2>
         <div class="unitContent">
-
+            <p>
+                Expressions and assignment statements simply represents all mathematical expressions that change at least two data types. This includes additon, subtraction, division, multiplication, and 
+                an additional operator known as modulo. Modulo simply just outputs the remainder when a number is divided by another number. Look at the following example for a reference.
+            </p>
+            <p class="lead">
+                double addition = 2.1 + 0.1; <br>
+                double subtraction = 13.8 - 2.2; <br>
+                double multiplication = 2.5 * 3; <br>
+                double division = 10 / 4.0; <br>
+                int modulo = 10 / 4; <br>
+                <br>
+                Each variable will now contain the following values: <br>
+                addition = 2.2 <br>
+                subtraction = 11.6 <br>
+                multiplication = 7.5 <br>
+                division = 2.5 <br>
+                modulo = 2 <br>
+            </p>
+            <p>
+                When declaring the variable, make sure to use the correct primitive types. If we were to run the command, <strong>int division = 10 / 4;</strong>, the variable division would 
+                have a value of 2, and not 2.5, due to the following two conditions. <br>
+                <span class="small">
+                    &nbsp A. The variable was declared as an int(ints only represent integers, not decimals) <br>
+                    &nbsp B. The variable was set equal to two ints dividing. One of the ints must be converted to a double simply adding a '.0' to the end of it(change 4 to 4.0);
+                </span>
+            </p>
+            <p>
+                When using these expressions, they still follow the normal order of operations(PEMDAS). Even if it may not be necessary to use parenthesis in certain cases due to 
+                it yielding the same result, it may still be good practice to do so whenever it comprises of a lot of different mathematical expressions so it would be easier to comprehend by others.
+            </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>1.4 - Compound Assignment Operators</h2>
         <div class="unitContent">
-
+            <p>
+                Compound assignment operators represent simple shortcuts to mathematical expressions that are commonly used. Look at the following two example:
+            </p>
+            <div class="codeText">
+                int number1 = 3; <br>
+                number1 = number1 * 3; <br>
+                <br>
+                int number1 = 3; <br>
+                number1 *= 3;
+            </div>
+            <p>
+                Both of these examples will lead to the variable, number1, containing the number 9. You can use this kind of shortcut for all of the mathematical expressions that were shown 
+                in the previous lesson. <strong>(+=, -=, *=, /=, %=)</strong>
+            </p>
+            <p>
+                Another set of common operators are known as the decrement and increment. Look at the following example: 
+            </p>
+            <div class="codeText">
+                int number2 = 1; <br>
+                number2 += 1; <br>
+                <br>
+                int number2 = 1; <br>
+                number2++; <br>
+                <br>
+                int number2 = 1; <br>
+                System.out.println(number2++); <br>
+                System.out.println(++number2);
+            </div>
+            <p>
+                Within the first two set of commands, number2 will result in a value of 2. This example represents incrementing and you can do the same thing with decrements<strong>(number2--)</strong>, 
+                which will subtract from number2. However, it isn't that simple. If we were to put the operators after the variable name, they are known as post-increments/post-decrements. This basically 
+                represents that if the use of the operators are within another command, it will run that command first and then run the increment/decrement. The opposite is true with pre-increments/pre-decrements. 
+                If we were to put the operators before the variable name, it would add/subtract 1 first and then run the outer command. Look at the third set of commands. If the command, 
+                <strong>System.out.println(number2++);</strong> were to run, it will simply print out 1. This is because it prints out the value of number2 first and then adds 1, so the value of number2 is 
+                now 2. If the next command, <strong>System.out.println(++number2);</strong>, were to run, it would print out 3. This is because prior to that specific line running, the value of number2 was 2. After 
+                running that command, the number2 would first add 1(making it now 3), and then prints it out into the terminal.
+            </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>1.5 - Casting and Ranges of Variables</h2>
         <div class="unitContent">
-
+            <p>
+                Since doubles and ints can be pretty complicated, java allows for something called casting. Casting consists of turning an primitive type to a different variable type. This is most commonly used 
+                on integers and doubles due to how weird they can be.
+            </p>
+            <div class="codeText">
+                double add = 3 + 5; <br>
+                <br>
+                int add2 = 3 + 2.0;
+            </div>
+            <p>
+                For the first command, add would be set to 5.0. This is because the variable was set as a double, which represents 8 bytes, you can easily expand an int. However, this isn't the case with the 
+                second command. The second command would lead to the program not compiling at all. This is because when you initiate the variable as an int, only 4 bytes are available to represent the number. 
+                However, you set it to 5.0, which is a double that represents 8 bytes. It is impossible to represent a double in 4 bytes but it is possible to represent an int in 8 bytes. This is where 
+                casting comes in.
+            </p>
+            <div class="codeText">
+                int add2 = (int) (3 + 2.0); <br>
+                <br>
+                int add2 = 3 + (int) 2.0;
+            </div>
+            <p>
+                Any of these solutions would work perfectly find to get the program to compile. A good rule of thumb is to make sure that you are either casting the end result or the double that is causing the problem. 
+                For the first solution, if you were to get rid of the second pair of parenthesis with the addition in it, the code wouldn't compile since you would technically be casting the 3 into an 
+                int(which doesn't do anything).
+            </p>
+            <p>
+                Something to keep in mind is that when casting a double to an int, it doesn't automatically round for you. For example, 4.8 casted to an int would result in a 4. <strong>A workaround for this 
+                is whenever you are trying to round a positive double<, add 0.5 and then cast it into an int. For negative doubles, subtract 0.5 and then using casting.</strong>
+            </p>
         </div>
         <hr class="unitSeparate">
         

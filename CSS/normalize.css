@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 :root {
     --battleship-grey: #808d8eff;
     --old-lavender: #766c7fff;
@@ -216,4 +217,20 @@ main {
     width: 80%;
     background-color: black;
     margin-bottom: 50px;
+}
+.codeText {
+    padding: -5px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: solid 3px grey;
+    border-radius: 10px;
+    background-color: var(--languid-lavender);
+}
+.codeText p {
+    margin: 1px;
+    margin-left: 10px;
+    font-family: 'Inconsolata', monospace;
 }
