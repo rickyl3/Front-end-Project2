@@ -96,57 +96,362 @@
     <main id="pageContainer">
         <p class="font-weight-bold lead">AP Exam Weighting: 5-7.5%</p>
         <p>
-            Unit 2 of this course consists of 
+            Unit 2 of this course consists of learning about how to utilize the content learned from Unit 1 to create <strong>methods</strong>(functions) and begin <strong>making 
+            objects</strong> that represent actual items since java is an object-oriented programming language after all. Additionally, this unit will introduce the <strong>Math and 
+            String classes</strong>, which are classes that basically allows you to be more flexible with the things that you can create. 
         </p>
         <hr class="unitSeparate">
         
         <h2>2.1 - Instances of Classes</h2>
         <div class="unitContent">
-
+          <p>
+            Objects in java are known as a reference type that is used to reference multiple pieces of data under one name. In this case, those multiple pieces of data 
+            consists of different primitive types and even other objects. Unlike how a variable is a reference to one piece of data, an object is a reference to however 
+            many pieces of data you want.
+          </p>
+          <p>
+            You may be asking, how do I create an object? Well, before we can make an object, we need a class. A class is basically a template that is used to create an object. Every 
+            object is always under at least 1 class. If you don't quite understand it yet, try thinking about it like this. A dog is a kind of pet that many people can have but realistically, 
+            every dog is different. They can be different by size, name given by the owner, color, etc. A dog is basically considered to be the class/template while the object is a reference made 
+            under that dog class that can be any dog that you can come up with. We will begin creating objects in the next subunit.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>2.2 - Creating and Storing Objects</h2>
         <div class="unitContent">
-
+          <p>
+            Since we now understand the differences between a classes and objects, we can begin making them. For this section of unit 2, we will try to stick with the dog example. When we want to 
+            create an object under a certain class, we are calling something called the constructor of the class. The constructor acts as a way for the user to easily set up the different 
+            characteristics(multiple pieces of data) of the object that we want to create. Look at the following example.
+          </p>
+          <div class="codeText">
+            <p>
+              Dog Poppy = new Dog("Poppy", "Male", 5);
+            </p>
+          </div>
+          <p>
+            Let's assume that the Dog class is already fully written for us. When we are initializing this Dog that we have given the reference name <span class="font-italic">Poppy</span>, we are calling 
+            the constructor that was made inside the Dog class. However, that specific constructor requires some extra information in the parenthesis to put inside the reference name, <span class="font-italic">Poppy</span>.
+            The information that it requires is its name, gender, and age. These values are known as parameters. Parameters are information passed into a method/function so it can use the information to 
+            do whatever it needs to do. In this case, the information is being put inside the <span class="font-italic">Poppy</span> reference. At this point, you are probably wondering how classes and its 
+            constructor is made. Look at the following example.
+          </p>
+          <div class="codeText">
+            <p>
+              public class Dog { <br>
+              &nbsp public Dog(String n, String g, int a) { <br>
+              &nbsp } <br>
+              }
+            </p>
+          </div>
+          <p>
+            In a separate file called Dog.java, we've added the code above. The code within the Dog class is the constructor of the class. It is currently empty but we will be adding to it
+            in later units. Since we've added different parameters within the constructor, we had to input the same primitive types in the same order as what the constructor is asking for. 
+            "Poppy" for String n, "Male" for String g, and 5 for int a. If were to initialize a dog with different primitive types or in the wrong order, then the code would output an error. 
+            A simple fix to this is known as overloading constructors. Look at the following example.
+          </p>
+          <div class="codeText">
+            <p>
+              public class Dog { <br>
+              &nbsp public Dog(String n, String g, int a) { <br>
+              &nbsp } <br>
+              &nbsp public Dog(String g, String n, int a) { <br>
+              &nbsp } <br>
+              &nbsp public Dog(int a, String g) { <br>
+              &nbsp } <br>
+              } <br>
+              <br>
+              Dog Poppy = new Dog("Poppy", "Male", 5); <br>
+              Dog Poppy2 = new Dog("Male", "Poppy2", 2); <br>
+              Dog Poppy3 = new Dog(2, "Female"); <br>
+              Dog Poppy4 = new Dog("Poppy", 1, "Male"); <br>
+            </p>
+          </div>
+          <p>
+            Since we have multiple constructors now, we now have something called overloaded constructors. This basically means that we have multiple options for initializing 
+            the object. All of the initializations of the Dog class in the second set of code would work <strong>except the last one</strong>.
+          </p>
+          <p>
+            Another thing with initializing objects is that you can set it to null:
+          </p>
+          <div class="codeText">
+            <p>
+              Dog example = null;
+            </p>
+          </div>
+          <p>
+            However, you won't be able to call any methods or information under its reference since when you set it to null, you are basically saying that it doesn't contain 
+            any form of information at all.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>2.3 - Calling a Void Method</h2>
         <div class="unitContent">
-
+          <p>
+            Methods are basically a way of storing a chunk of code under a reference so you can call it multiple times without needing to rewrite the actual code every single time. 
+            Just like constructors, they can use parameters as an input. Realistically, you can make the method do whatever you want it to do. For example, printing a String, adding 
+            numbers, changing a variable, or nothing at all. However, there is something to keep in mind whenever creating a method - whether or not it is a void method. Let's take a 
+            break from separate classes and go back to the main class. In the main class, I'm going to add the following methods within the Main class brackets but outside the public 
+            static void main brackets.
+          </p>
+          <div class="codeText">
+            <p>
+              public void method1() { <br>
+              &nbsp System.out.println("This is a void method"); <br>
+              } <br>
+              public int method2() { <br>
+              &nbsp return 0; <br>
+              } <br>
+              <br>
+              method1(); <br>
+              method2();
+            </p>
+          </div>
+          <p>
+            The first method is a void method. It doesn't return any value but it can be used to do things like change outside variables. Non-void methods must return something based 
+            on what you make the return type to be. I made the return type to be an int, so I made it return a 0(could be any number you need). In order to call these methods, simply 
+            just call there reference names, as shown in the second set of code. These examples are very simple and you can make them do much more complicated tasks. One way to do this 
+            is by adding a list of parameters within the parenthesis just like how we did with the constructors.
+          </p>
+          <p>
+            Let's go back to the Dog class now. In the class, we add the following methods:
+          </p>
+          <div class="codeText">
+            <p>
+              public void printHello() { <br>
+              &nbsp System.out.println("Hello"); <br>
+              } <br>
+              public static void printHello2() { <br>
+              &nbsp System.out.println("Hello2"); <br>
+              }
+            </p>
+          </div>
+          <p>
+            You might have already noticed the difference between the two methods already. One has the word static in it and the other one doesn't. When we create an object under a 
+            specific class, we can call that objects reference followed by a period and a method name.
+          </p>
+          <p class="lead">
+            objectName.methodName();
+          </p>
+          <p>
+            If we were to do this and call printHello by running the command, <strong>Poppy.printHello();</strong>, in our Main class, then it will print <span class="font-italic">Hello</span> 
+            into the terminal. However, if we were to run the command, <strong>Poppy.printHello2();</strong>, there would be an error. This is because of the static keyword in the method. When 
+            we add the keyword, <strong>static</strong>, to a method, we are making that method only usable in the class that we made the method in. We commonly use static to organize which methods 
+            are supposed to be used within its own class, and which methods aren't.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>2.4 - Calling a Void Method with Parameters</h2>
         <div class="unitContent">
-
+          <p>
+            In the previous subunit, you might have remembered that I mentioned something about adding a list of parameters to methods. In this section of unit 2, we will go over that. We will be 
+            adding the following method into the Main class:
+          </p>
+          <div class="codeText">
+            <p>
+              public static void numberOfDays(int weeks) { <br>
+              &nbsp System.out.println(weeks * 7); <br>
+              } <br>
+              <br>
+              numberOfDays(88);
+            </p>
+          </div>
+          <p>
+            Compared to the previous methods that I showed, this one contains a parameter. For this specific method, I made it calculate how many days are in a week based on however many weeks 
+            we were to input into the method. If we were to call the method like how I showed in the second part of the code shown above, then the terminal would print 616. This is because it took 
+            the number of weeks that we inputted into the method(88), multiplied it by 7 to get the number of days, and then printed it out. If we were to input a different int as the parameter, then 
+            the output would be different.
+          </p>
+          <p>
+            Just like how we overloaded constructors, we can also overload methods. Let's add the following method:
+          </p>
+          <div class="codeText">
+            <p>
+              public static void numberOfDays(double weeks) { <br>
+              &nbsp System.out.println(weeks * 7); <br>
+              } <br>
+              <br>
+              numberOfDays(67.4);
+            </p>
+          </div>
+          <p>
+            We just overloaded our numberOfDays method by creating another variation of it. Because of this, we are now able to input a double into the same reference name and receive a similar output. 
+            If we were to call the command in the second part of the code above, then it would print out 471.8. This is because since we added another variation of the method that now allows for inputting 
+            a double into the method and it is using that specific method to do the task that we are asking for.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>2.5 - Calling a Non-Void Method</h2>
         <div class="unitContent">
-
+          <p>
+            Last time, we showed an example of using parameters in a void method. In this section of unit 2, we will do the same but for non-void methods. First, lets create some methods.
+          </p>
+          <div class="codeText">
+            <p>
+              public static int numberOfDaysReturn(int weeks) { <br>
+              &nbsp return weeks * 7; <br>
+              } <br>
+              public static double numberOfDaysReturn(double weeks) { <br>
+              &nbsp return weeks * 7; <br>
+              } <br>
+              <br>
+              numberOfDaysReturn(10); <br>
+              numberOfDaysReturn(10.2); <br>
+              <br>
+              int value = numberOfDaysReturn(10); <br>
+              System.out.println(value); <br>
+              <br>
+              System.out.println(numberOfDaysReturn(10));
+            </p>
+          </div>
+          <p>
+            The methods above do the same task as the methods from the previous subunit. However, this time, they are return due to them being a non-void method. If we were to run the 2 commands 
+            in the second part of the code above, then nothing would seem to be happening. This is because although they are returning the values that they should, we aren't doing anything with them.
+            If we were to run the commands in the third part of the code, we would be setting the variable <span class="font-italic">value</span> to the result of the method called, which would be 70. 
+            Then, we would be able to print out the variable, which would lead to the terminal printing out 70. If we were to run the 4th part of the code, it will also print out 70. The only difference 
+            is that we aren't giving the output to any variable. We are straight up just printing the returned value.
+          </p>
         </div>
         <hr class="unitSeparate">
+
         <h2>2.6 - String Objects: Concatenation, Literals, etc.</h2>
         <div class="unitContent">
-
+          <p>
+            At this point, I'm sure you are familiar with all of the primitive types - int, double, String, and booleans. Among all of those, one of them is actually considered to be an object and that 
+            is the String. 
+          </p>
+          <div class="codeText">
+            <p>
+              String string = "Hello World!"; <br>
+              String string2 = new String("Hello World!");
+            </p>
+          </div>
+          <p>
+            If we were to run both of the commands above, each variable will actually have the same String stored inside of it. This is because since String is a class, we can actually create it using 
+            its constructor rather than setting a variable equal to some text surrounded by quotations. 
+          </p>
+          <p>
+            When we create strings, you can see that we use quotation marks to distinguish the start and end of the strings that we are trying to create. However, this raises the question of how we would 
+            actually include a quotation mark in the contents of the string. In this situation, we would use escape characters. Escape characters are characters that start with <span class="font-italic">\</span> 
+            followed by whatever character you want to add to the string. If we wanted to add quotation marks, simply just add <strong>\"</strong> to wherever you want the quotation mark to be. There are many 
+            other escape characters in java and if you're interested in them, you can look them up but majority of thme are not required for this course.
+          </p>
+          <p>
+            In addition to being familiar with primitive types, I'm sure you're also familiar with expressions(mathematical operators). However, you've only seen them used on ints and doubles. We can actually 
+            use some addition(but not any other expression!) to connect some strings. This is known as string concatenation.
+          </p>
+          <div class="codeText">
+            <p>
+              String firstName = "John"; <br>
+              String lastName = "Cena"; <br>
+              System.out.println(firstName + lastName); <br>
+              System.out.println("Dwayne " + "Johnson");
+            </p>
+          </div>
+          <p>
+            If we were to run the commands above, then the terminal will print out <span class="font-italic">JohnCena</span> and <span class="font-italic">Dwayne Johnson</span>. You may have noticed that there 
+            isn't a space between the first string. That is because when using string concatentation, it doesn't add spaces for you. You will have to manually add spaces whenever need. To fix this, just change the print  
+            statement to <span class=font-italic>firstName + " " + lastName</span> in between the concatenation of the variables. Additionally, at this point, you've probably noticed that there isn't much of a difference 
+            between using variables and literal strings when printing. They both work as long as you're getting the result that you want.
+          </p>
         </div>
         <hr class="unitSeparate">
+
         <h2>2.7 - String Methods</h2>
         <div class="unitContent">
-
+          <p>
+            Since we know that String is a built-in class, we also know that it has some built-in methods that we can use on Strings. There are many different String methods but here are just some of the 
+            most important ones for this course.
+          </p>
+          <p class="lead">
+            String.length(); <br>
+            String.substring(int startIndex, int endIndex); <br>
+            String.equals(String otherString); <br>
+            String.compareTo(String otherString);
+          </p>
+          <div class="codeText">
+            <p>
+              String example = "Hello World!"; <br>
+              System.out.println(example.length()); <br>
+              System.out.println(example.substring(0, 3)); <br>
+              System.out.println(example.equals("Hello world!")); <br>
+              System.out.println(example.compareTo("Hello Worad!"));
+            </p>
+          </div>
+          <p>
+            I've provided each of the important methods along with an example. You can experiment with each of the methods with the compiler below.<br>
+            <br>
+            For the first method, all it does is return how many characters are in the String. In the example, it would print 12. <br>
+            <br>
+            For the second method, you'll have to understand how index works. For almost all programming languages, including java, the first index is always 0. For example, the <span class="font-italic">H</span> 
+            in the example string would be at index 0 and the <span class="font-italic">W</span> would be at index 6. Now that we understand how indexes work, we can use the substring method. The substring method 
+            returns a part of a string based on what start and end index you would give it. While the character at the start index will be included in the output of the substring, the character at the 
+            end index won't. In the example, the output would simply just be <span class="font-italic">Hel</span>. <br>
+            <br>
+            For the third method, it checks if the original string is exactly the same as the the string that you inputted as a parameter. In the example, false would be returned because the 
+            <span class="font-italic">w</span> in the inputted parameter is actually capitalized in the original string. <br>
+            <br>
+            For the last method, it compares the difference in alphabetical order between the two strings. The return code in the example would be 11 since the <span class="font-italic">l</span> in the 
+            original string is 11 letters away from the <span class="font-italic">a</span> in the alphabet.
+          </p>
         </div>
         <hr class="unitSeparate">
+
         <h2>2.8 - Wrapper Classes</h2>
         <div class="unitContent">
-
+          <p>
+            You are probably wondering if ints and doubles have a class since you've learned just learn of the String class. Well, sort of. There are classes called Integer and Double but are still 
+            different than ints and doubles. They are known as something called <strong>Wrapper classes</strong>. They are used to create objects from primitive types, as vague as that sounds. For example, 
+            we can create an Integer object that stores a specific int. 
+          </p>
+          <p>
+            In addition to using their constructors, we can also use the wrapper classes' methods.
+          </p>
+          <p class="lead">
+            Integer.MIN_VALUE - returns the minimum value that can be represented by an int
+            Integer.MAX_VALUE - returns the maximum value that can be represented by an int
+          </p>
+          <p>
+            When compiling Integers or Doubles, java does something known as autoboxing. This term represents the automatic conversion between the primitive types(int, double) and their wrapper classes
+            (Integer, Double). This is used so primitives types that are used in a parameter that expects an object or assigned to a variable of its wrapper class can be converted to their wrapper classes 
+            so the computer knows what it's looking for. Most of the time, you won't have to worry about this since the java compiler does this for you anyway.
+          </p>
+          <p>
+            Since autoboxing exists, the reverse also exists. That is known as unboxing. This basically represents the conversion from an Integer to an int or Double to a double. This is used so wrapper classes 
+            that are used in a parameter that expects a primitive type or assigned to a variable of its primitive type.
+          </p>
         </div>
         <hr class="unitSeparate">
+
         <h2>2.9 - Using The Math Class</h2>
         <div class="unitContent">
-
+          <p>
+            When using the Math class, you don't have to create any object to use its methods. This class doesn't have any constructors so in order to use any of their methods, simply just write 
+            <strong>Math.</strong> and then whatever method name you plan on using.
+          </p>
+          <p>
+            One method from the Math class is the abs method. This method is used whenever you want to find the absolute value of a number. For example, if you were to run the command, 
+            <strong>Math.abs(-11);</strong>, then 11 would be returned.
+          </p>
+          <p>
+            Two more important methods from the Math class is the sqrt and pow method. We can use these methods to find the square root of a number or use exponents. For example, 
+            <strong>Math.sqrt(25);</strong> would return 5. For the pow method, it requires two parameters - base number, and the exponent. <strong>Math.pow(5, 3);</strong> would return 125.
+          </p>
+          <p>
+            The fourth important method from the Math class is known as the random method. This method will return a random double greater than or equal to 0 but less than 1. This is commonly used whenever you 
+            are trying to create some sort of randomness in whatever project your may be working on. A really useful formula to know is the following:
+          </p>
+          <p class="lead">
+            (int) (Math.random() * (max - min + 1) + min);
+          </p>
+          <p>
+            This formula is used whenever you want to generate an int that is between any 2 numbers that you want. For example, if you want to generate a random int between 10 and 32, you would use the 
+            command, <strong>(int) (Math.random() * (32 - 10 + 1) + 10)</strong>. For simplicity sakes, you can simplify the <span class="font-italic">32 - 10 + 1</span> to 23 if needed.
+          </p>
         </div>
         <hr class="unitSeparate">
         

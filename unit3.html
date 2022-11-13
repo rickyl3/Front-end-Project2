@@ -96,43 +96,242 @@
     <main id="pageContainer">
         <p class="font-weight-bold lead">AP Exam Weighting: 15-17.5%</p>
         <p>
-            Unit 3 of this course consists of 
+            Unit 3 of this course consists of learning about new expressions that can be used to compare not only primitive types, but also objects. In addition to this, it will introduce 
+            a very important statement that will be used throughout the rest of this course - If-else statements.
         </p>
         <hr class="unitSeparate">
         
         <h2>3.1 - Overview and Boolean Expressions</h2>
         <div class="unitContent">
-
+          <p>
+            What's the point of having many different numbers when we can't compare them right? Well, that's what boolean expressions are used for. Boolean expressions are created with 
+            operators that can be used to compare at least 2 different numbers. Each operator will return a boolean(true or false), which can be very useful in many occasions. Here are 
+            the operators:
+          </p>
+          <p class="lead">
+            x == y - checks if x is equal to y(can be any primitive type) <br>
+            x != y - checks if x is unequal to y(can be any primitive type) <br>
+            x < y - checks if x is less than y <br>
+            x <= y - checks if x is less than or equal to y <br>
+            x > y - checks if x is greater than y <br>
+            x >= y - checks if x is greater than or equal to y
+          </p>
+          <p>
+            When using these operators, you aren't limited to only using them by themselves. You can combine them with other operators such as addition or modulo to make a more 
+            concise boolean expression.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>3.2 - If Statements and Control Flow</h2>
         <div class="unitContent">
-
+          <p>
+            Now that we're familiar with boolean expressions, we can introduce if statements. If statements will are used whenever you want a specific piece of code to run only if 
+            something is true. The part that will make the code within the if statement run is known as the conditional statement. In short, conditional statements is the same as 
+            boolean expressions. It utilizes different operators to decide when it is true to make the code within the if statement run.
+          </p>
+          <div class="codeText">
+            <p>
+              int number = 6; <br>
+              if (number % 2 == 0) { <br>
+              &nbsp System.out.println("number is even"); <br>
+              }
+            </p>
+          </div>
+          <p>
+            The example above shows what a basic if statement looks like. First, we check if the variable number has no remainder if it's divided by 2. Since it does, it will run 
+            the piece of code within its brackets and that turns out to be just a simple print statement thats says it is even. This is just a simple example that is used to 
+            showcase the syntax of the if statement in java. Let's look at a practical situation:
+          </p>
+          <div class="codeText">
+            <p>
+              public boolean divisibleBy3(int number) { <br>
+              &nbsp if (number % 3 == 0) { <br>
+              &nbsp &nbsp return true; <br>
+              &nbsp } <br>
+              &nbsp return false; <br>
+              }
+            </p>
+          </div>
+          <p>
+            In the example above, we've made a method that takes in a number and checks whether or not it is divisible by 3. If we were to run the statement, <strong>divisibleBy3(10);</strong>, 
+            then the returned boolean would be false since when 10 is divided by 3, it doesn't have a remainder of 0. However, If we were to run the statement, <strong>divisibleBy3(12);</strong>, 
+            then the returned boolean would be true since it can be divided by 3 without having any remainders left. You might be wondering, how come it didn't return false since there is another 
+            return statement right after it? That is because in non-void methods, whenever you return the ouput of the method, it completely stops the rest of the method. Because of this, it 
+            wasn't necessary to write another if statement to check if it wasn't divisible by 3.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>3.3 - If-Else Statements</h2>
         <div class="unitContent">
-
+          <p>
+            When writing if statements, a certain code is ran only if the conditional statement is true, but how about whenever the conditional statement is false? While we could write a completely 
+            new if statement that uses a opposite conditional statement, that isn't very efficient. In this situation, we would use the else statement. Look at the following example:
+          </p>
+          <div class="codeText">
+            <p>
+              public void evenOrOdd(int number) { <br>
+              &nbsp if (number % 2 == 0) { <br>
+              &nbsp &nbsp System.out.println("Even"); <br>
+              &nbsp } else { <br>
+              &nbsp &nbsp System.out.println("Odd"); <br>
+              &nbsp } <br>
+              }
+            </p>
+          </div>
+          <p>
+            The example above is a void method that takes a number and determines if it is even or odd and prints out the result into the terminal. If we were to run the command, 
+            <strong>evenOrOdd(10);</strong>, then <span class="font-italic">Even</span> would be printed. However, if we were to run the command, <strong>evenOrOdd(11);</strong>, 
+            then <span class="font-italic">Odd</span> would be printed. In this situation, unlike the method from the previous subunit, using else is very important. If we weren't 
+            going to use the else statement and inputted 10 into the method, then both Even and Odd would be printed out. Since this specific method is void, there is no return 
+            statement that would stop the entire method.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>3.4 - Else If Statements</h2>
         <div class="unitContent">
-
+          <p>
+            Another feature of if statements is the else if component. This part of the code runs only if the initial if statement or any previous else if statement is false. Refer 
+            to the following example.
+          </p>
+          <div class="codeText">
+            <p>
+              int number = 18; <br>
+              if (number % 2 == 0) { <br>
+              &nbsp System.out.println("number divisible by 2"); <br>
+              } <br>
+              if (number % 3 == 0) { <br>
+              &nbsp System.out.println("number divisible by 3"); <br>
+              } <br>
+              <br>
+              int number = 18; <br>
+              if (number % 2 == 0) { <br>
+              &nbsp System.out.println("number divisible by 2"); <br>
+              } else if number % 3 == 0 { <br>
+              &nbsp System.out.println("number divisible by 3"); <br>
+              } else { <br>
+              &nbsp System.out.println("number not divisible by 2 or 3"); <br>
+              }
+            </p>
+          </div>
+          <p>
+            In the example above, if we were to run the first set of code, both print statements would run. This is because they are separate if statements that both lead to their conditoonal 
+            statement being true. However, if we were to run the second set of code, this wouldn't be the case. Since the initial conditonal is true, the else if and else conditionals 
+            wouldn't even be checked. In other words, only the first print statement would run. If we were to set number equal to 15, then the second print statement would run. Finally, if we 
+            were to set number equal to 7 then every if and else if statement would be false, which means that the print statement in the else part(the last print statement) of the entire code 
+            would run.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>3.5 - Compound Boolean Expressions</h2>
         <div class="unitContent">
-
+          <p>
+            When writing if statements, you can actually put if statements within if statements. Sometimes, this can actually be useful when you have a lot of different conditions to test. However, 
+            if you simply only have two if statements within each other, then there is a much better way to rewrite it.In a previous subunit, I mentioned how you can combine different different 
+            operators to create more concise and complex boolean expressions. In this lesson, you will learn about compound boolean expressions. In short, these expressions use operators to 
+            compare or change two different booleans. Here are the three operators that you will use for this course: 
+          </p>
+          <p class="lead">
+            ! (NOT) - reverses the result of the expression in front of it (!true means false) <br>
+            && (AND)- returns true only if both expressions are true <br>
+            || (OR)- returns true if either expressions are true
+          </p>
+          <div class="codeText">
+            <p>
+              boolean example = true; <br>
+              boolean example2 = false; <br>
+              if (!example) { <br>
+              &nbsp System.out.println("Hello"); <br>
+              } <br>
+              if (example && example2) { <br>
+              &nbsp System.out.println("Hello2"); <br>
+              } <br>
+              if (example || example2) { <br>
+              &nbsp System.out.println("Hello3"); <br>
+              }
+            </p>
+          </div>
+          <p>
+            In the example, I've provided some test cases to show you how each operator works. For the first if statement, the condition would be false and nothing would be printed since the 
+            <span class="font-italic">!</span> would switch the variable to false. Keep in mind that the variable, <span class="font-italic">example</span>, is still true. We only modified the 
+            result within the conditional. For the second if statement, the conditional would also be false and nothing would be printed since for &&, both expressions have to be true. In this 
+            case, only one of them is true. For the last if statement, the conditional would be true and <span class="font-italic">Hello3</span> would be printed. This is because when using 
+            ||, only one of the boolean expressions have to be true and in this case, the variable, <span class="font-italic">example</span>, is true.
+          </p>
         </div>
         <hr class="unitSeparate">
 
         <h2>3.6 - Equivalent Boolean Expressions</h2>
         <div class="unitContent">
-
+          <p>
+            When using the operators mentioned in the previous subunit, there are many small patterns that you can look for and immediately know the result of the boolean expression. If we let  
+            <span class="font-italic">any</span> represent a certain boolean, here are just a few of them:
+          </p>
+          <p class="lead">
+            any && false == false <br>
+            any && true == any <br>
+            any || false == any <br>
+            any || true == true
+          </p>
+          <p>
+            In addition to these rules, whenever you see a <span class="font-italic">!</span> (NOT) followed by a compound boolean expression in parenthesis, then you can actually "distribute" 
+            the <span class="font-italic">!</span> and create an equivalent boolean expression. Look at the following expressions:
+          </p>
+          <div class="codeText">
+            <p>
+              !(boolean1 && boolean2) <br>
+              <br>
+              !boolean1 || !boolean2
+            </p>
+          </div>
+          <p>
+            Both of the boolean expressions above will always lead to the same result no matter what boolean each variable contains. This is known as <strong>De Morgan's Law</strong>. Also, if you 
+            can distribute the NOT, then you can also "undistribute" it if both sides of the expression contains a NOT.
+          </p>
+        </div>
+        <hr class="unitSeparate">
+        
+        <h2>3.7 - Comparing Objects</h2>
+        <div class="unitContent">
+          <p>
+            So far, we have only been using the operators to compare boolean, ints, and doubles. In addition to these primitive types, we can also compare objects, which includes Strings. Refer 
+            to the following example: 
+          </p>
+          <div class="codeText">
+            <p>
+              String a = "Hello"; <br>
+              String b = "Hello"; <br>
+              String c = a; <br>
+              String d = new String("Hello"); <br>
+              System.out.println(a == b); <br>
+              System.out.println(b == c); <br>
+              System.out.println(a == c); <br>
+              System.out.println(a == d); <br>
+              <br>
+              true <br>
+              true <br>
+              true <br>
+              false
+            </p>
+          </div>
+          <p>
+            In the example above, I've provided the outputs of each print statement. When comparing objects using <span class="font-italic">==</span>, you are comparing if they are exactly the 
+            same. For the last statement, it prints false because although both variables contain the same string, they were constructed differently. A good way to fix this is to use a method 
+            known as the <strong>.equals</strong> method.
+          </p>
+          <div class="codeText">
+            <p>
+              System.out.println(a.equals(d));
+            </p>
+          </div>
+          <p>
+            Assuming that each variable still contains the same string, the command above would return true instead of false. This is because the .equals method is made for the purpose of 
+            comparing objects. This method compares the characteristics(attributes) of each object, while <span class="font-italic">==</span> compares whether or not they are the same 
+            exact object.
+          </p>
         </div>
         <hr class="unitSeparate">
         

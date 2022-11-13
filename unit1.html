@@ -172,7 +172,9 @@
                 dataType variableName = variableValue;
             </p>
             <div class="codeText">
-                int daysInYear = 365;
+                <p>
+                    int daysInYear = 365;
+                </p>
             </div>
             <p>
                 When naming variables, it is good practice to write them in a format known as Camel Case. For this format, if your variable name is more than 1 word, 
@@ -181,10 +183,12 @@
                 By keeping a consistent pattern that many people follow, it makes understanding not only your own code, but other people's codes, a lot easier.
             </p>
             <div class="codeText">
-                int daysInYear = 365; <br>
-                private int daysinWeek = 7; <br>
-                protected int daysinLeapYear = 366; <br>
-                public int hoursInDay = 24;
+                <p>
+                    int daysInYear = 365; <br>
+                    private int daysinWeek = 7; <br>
+                    protected int daysinLeapYear = 366; <br>
+                    public int hoursInDay = 24;
+                </p>
             </div>
             <p>
                 When declaring variables, you can add something known as an access modifier to the start of the declaration. Since java is an object-oriented programming language, we need a good 
@@ -229,9 +233,10 @@
                 </tr>
             </table>
             <div class="codeText">
-                import java.util.Scanner; <br>
-                <br>
-                public class Main { <br>
+                <p>
+                    import java.util.Scanner; <br>
+                    <br>
+                    public class Main { <br>
                     &nbsp public static void main(String[] args) { <br>
                     &nbsp &nbsp Scanner input = new Scanner(System.in); <br>
                     &nbsp &nbsp System.out.println("Enter an int: "); <br>
@@ -245,6 +250,7 @@
                     &nbsp &nbsp System.out.println(inputString); <br>
                     &nbsp } <br>
                     } <br>
+                </p>
             </div>
             <p>
                 In java, a simple way to receive an input from the user is with the Scanner class. In order to use the Scanner class, we first need to import <strong>java.util.Scanner</strong>. When 
@@ -307,11 +313,13 @@
                 Compound assignment operators represent simple shortcuts to mathematical expressions that are commonly used. Look at the following two example:
             </p>
             <div class="codeText">
-                int number1 = 3; <br>
-                number1 = number1 * 3; <br>
-                <br>
-                int number1 = 3; <br>
-                number1 *= 3;
+                <p>
+                    int number1 = 3; <br>
+                    number1 = number1 * 3; <br>
+                    <br>
+                    int number1 = 3; <br>
+                    number1 *= 3;
+                </p>
             </div>
             <p>
                 Both of these examples will lead to the variable, number1, containing the number 9. You can use this kind of shortcut for all of the mathematical expressions that were shown 
@@ -321,15 +329,17 @@
                 Another set of common operators are known as the decrement and increment. Look at the following example: 
             </p>
             <div class="codeText">
-                int number2 = 1; <br>
-                number2 += 1; <br>
-                <br>
-                int number2 = 1; <br>
-                number2++; <br>
-                <br>
-                int number2 = 1; <br>
-                System.out.println(number2++); <br>
-                System.out.println(++number2);
+                <p>
+                    int number2 = 1; <br>
+                    number2 += 1; <br>
+                    <br>
+                    int number2 = 1; <br>
+                    number2++; <br>
+                    <br>
+                    int number2 = 1; <br>
+                    System.out.println(number2++); <br>
+                    System.out.println(++number2);
+                </p>
             </div>
             <p>
                 Within the first two set of commands, number2 will result in a value of 2. This example represents incrementing and you can do the same thing with decrements<strong>(number2--)</strong>, 
@@ -350,9 +360,11 @@
                 on integers and doubles due to how weird they can be.
             </p>
             <div class="codeText">
-                double add = 3 + 5; <br>
-                <br>
-                int add2 = 3 + 2.0;
+                <p>
+                    double add = 3 + 5; <br>
+                    <br>
+                    int add2 = 3 + 2.0;
+                </p>
             </div>
             <p>
                 For the first command, add would be set to 5.0. This is because the variable was set as a double, which represents 8 bytes, you can easily expand an int. However, this isn't the case with the 
@@ -361,9 +373,11 @@
                 casting comes in.
             </p>
             <div class="codeText">
-                int add2 = (int) (3 + 2.0); <br>
-                <br>
-                int add2 = 3 + (int) 2.0;
+                <p>
+                    int add2 = (int) (3 + 2.0); <br>
+                    <br>
+                    int add2 = 3 + (int) 2.0;
+                </p>
             </div>
             <p>
                 Any of these solutions would work perfectly find to get the program to compile. A good rule of thumb is to make sure that you are either casting the end result or the double that is causing the problem. 
