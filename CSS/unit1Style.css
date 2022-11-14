@@ -26,8 +26,8 @@ h1 {
 }
 .unitContent a img {
     width: 60%;
-    margin-left: 175px;
-    margin-bottom: 16px;
+    display: block;
+    margin: 0 auto;
 }
 #accessModifierTable {
     margin-left: auto;
