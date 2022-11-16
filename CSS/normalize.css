@@ -246,4 +246,7 @@ main {
     .codeText p {
         font-size: 3vw;
     }
+    h2 {
+        margin: 8px 20px;
+    }
 }
