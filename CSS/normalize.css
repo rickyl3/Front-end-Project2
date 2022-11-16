@@ -235,3 +235,15 @@ main {
     margin-left: 10px;
     font-family: 'Inconsolata', monospace;
 }
+
+@media screen and (max-width: 768px) {
+    #pageContainer {
+        margin: 20px auto;
+    }
+    .codeText {
+        width: 100%;
+    }
+    .codeText p {
+        font-size: 3vw;
+    }
+}

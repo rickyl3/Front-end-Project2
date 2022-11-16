@@ -19,6 +19,10 @@ h1 {
     color: var(--deep-space-sparkle);
     text-align: center;
     margin-top: 100px;
+    margin-bottom: 0px;
+}
+#description {
+  margin: 1vh 2vh;
 }
 #github {
   margin: 0 auto;
@@ -28,17 +32,39 @@ h1 {
   transform: scale(1.1);
 }
 #photoGallery {
-  margin: 100px 200px;
   display: grid;
-  grid-template-rows: repeat(2, 0.5fr);
-  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2vh;
 }
 #photoGallery img {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
-#photo6 {
-  grid-column: span 2;
+
+@media screen and (max-width: 768px) {
+  #photoGallery {
+    margin: 2vh 4vh;
+    padding: 5vh;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1fr;
+  }
+  #photoGallery img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 769px) {
+  #photoGallery {
+    margin: 100px 200px;
+    grid-template-rows: repeat(2, 0.5fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #photo1 {
+    height: 100%;
+  }
+  #photo6 {
+    grid-column: span 2;
+  }
+  #photo7 {
+    height: 48%;
+  }
 }
