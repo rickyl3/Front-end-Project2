@@ -237,7 +237,7 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    #pageContainer {
+    #pageContainer, h2 {
         margin: 20px auto;
     }
     .codeText {
@@ -245,8 +245,5 @@ main {
     }
     .codeText p {
         font-size: 3vw;
-    }
-    h2 {
-        margin: 8px 20px;
     }
 }
