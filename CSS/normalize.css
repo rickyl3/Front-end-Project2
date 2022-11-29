@@ -240,10 +240,23 @@ main {
     #pageContainer, h2 {
         margin: 20px auto;
     }
+    #pageContainer {
+        margin: 20px auto;
+    }
+    .introduction {
+        margin: 20px 20px;
+    }
     .codeText {
         width: 100%;
     }
     .codeText p {
         font-size: 3vw;
+    }
+    #compiler {
+        width: 600px;
+        margin: 0px auto;
+    }
+    footer {
+        width: 100%;
     }
 }
